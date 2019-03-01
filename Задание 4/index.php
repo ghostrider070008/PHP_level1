@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html><!--Задание 4 -->
 <html lang="ru">
 <head>
     <meta charset="UTF-8">

@@ -1,9 +1,9 @@
 <?
 $str = 'Самосвал въехал в гору';
-function transliterate($string) {
+function replace_string($string) {
     $converter = array(
         ' ' => '_'
     );
     return strtr($string, $converter);
 }
-echo transliterate($str);
+echo replace_string($str);

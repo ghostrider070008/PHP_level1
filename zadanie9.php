@@ -1,7 +1,7 @@
 <?
-$str = 'Самосвал въехал в гору';
+$str = 'Мама мыла Раму';
 function transliterate($string) {
-    $converter = array(
+    $converter = [
         'а' => 'a',   'б' => 'b',   'в' => 'v',
         'г' => 'g',   'д' => 'd',   'е' => 'e',
         'ё' => 'e',   'ж' => 'zh',  'з' => 'z',
@@ -26,7 +26,9 @@ function transliterate($string) {
         'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Shch',
         'Ь' => '',  'Ы' => 'Y',   'Ъ' => '',
         'Э' => 'E',   'Ю' => 'Iu',  'Я' => 'Ia',
-    );
+        ' ' => '_'];
     return strtr($string, $converter);
+
+
 }
 echo transliterate($str);

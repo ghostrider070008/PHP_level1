@@ -32,6 +32,21 @@ foreach ($filelist as $filename){
 echo $galereya;
 ?>
 <div class="cleardiv"></div>
+<form action="load_file.php" method="POST" enctype="multipart/form-data">
+	<p>Загрузите файл на сервер</p>
+	<input type="file" name="photo[]" multiple accept="image/jpeg"><br><br>
+	<input type="submit" value="Сохранить">
+	
+</form>
+<?
+$responce_dir = scandir("img/small/");
+//print_r($responce_dir = scandir("img/small/"));
+foreach ($responce_dir as $key){
+    if (is_dir($key)){
+    print_r ($key."<br>");
+    }
+}
+?>
 </main>
 <?
 /*Функция поиска файлов в директории*/
@@ -44,4 +59,6 @@ function find_filename($responce_f){
     return $filelist_f;
 }
 ?>
+
+
 

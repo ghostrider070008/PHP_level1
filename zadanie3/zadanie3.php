@@ -16,6 +16,14 @@ $responce_real = scandir("img/real/");
 $filelist_real = [];
 $filelist = find_filename($responce);
 $filelist_real = find_filename($responce_real);
+$responce_dir = scandir("img/real/");
+$i = 0;
+$dir = [];
+
+//print_r($responce_dir = scandir("img/small/"));
+$dir = find_dir($responce_dir);
+
+
 /*foreach ($responce as $value){
     if (strpos($value,"jpg") != false){
         $filelist [] = $value;
@@ -29,6 +37,12 @@ foreach ($responce_real as $value){
 foreach ($filelist as $filename){
     $galereya .="<a class=\"two\" data-fancybox=\"example_group\" rel=\"group\" href=\"img/real/$filename\"><img src=\"img/small/$filename\" alt=\"$filename\"></a>";
 }
+$responce_real_user = scandir("img/real/$dir[0]");
+
+$filelist = find_filename($responce_real_user);
+foreach ($filelist as $filename){
+    $galereya .="<a class=\"two\" data-fancybox=\"example_group\" rel=\"group\" href=\"img/real/$dir[$i]/$filename\"><img src=\"img/real/$dir[$i]/$filename\" alt=\"$filename\"></a>";
+}
 echo $galereya;
 ?>
 <div class="cleardiv"></div>
@@ -38,26 +52,33 @@ echo $galereya;
 	<input type="submit" value="Сохранить">
 	
 </form>
-<?
-$responce_dir = scandir("img/small/");
-//print_r($responce_dir = scandir("img/small/"));
-foreach ($responce_dir as $key){
-    if (is_dir($key)){
-    print_r ($key."<br>");
-    }
-}
-?>
+
 </main>
 <?
 /*Функция поиска файлов в директории*/
 function find_filename($responce_f){
+    $k = 0;
     foreach ($responce_f as $value){
         if (strpos($value,"jpg") != false){
-            $filelist_f [] = $value;
+            $filelist_f[$k] = $value;
+            $k++;
         }
     }
     return $filelist_f;
 }
+
+/*Функция поиска директорий*/
+
+function find_dir($responce_dir){
+    $i = 0;
+    foreach ($responce_dir as $key){
+        if (is_dir($key) and ($key!='.' and $key!='..')){
+        $dir[$i] = $key;
+        $i++;
+        }
+    }
+    return $dir;
+    }
 ?>
 
 

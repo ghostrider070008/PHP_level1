@@ -18,6 +18,13 @@ foreach ($responce_real as $value){
         $filelist [] = $value;
     }
 }*/
+include('config.php');
+$sql = "select * from foto";
+$res = mysqli_query($connect,$sql);
+print_r($data);
+while ($data = mysqli_fetch_assoc($res)){
+echo '<a href="'.$data['url_foto'].'" target="_blank"><img src="'.$data['url_foto'].'" alt="'.$data['name_foto'].'"></a>';
+}
 foreach ($filelist as $filename){
     $galereya .="<a href=\"img/real/$filename\" target=\"_blank\"><img src=\"img/small/$filename\" alt=\"$filename\"></a>";
 }

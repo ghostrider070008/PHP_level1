@@ -58,12 +58,20 @@ while ($data = mysqli_fetch_assoc($res)){
 $galereya.='<a href="page2.php?id='.$data['id'].'&v='.$data['views'].'" target="_blank" onclick="f('.$data['id'].','.$data['views'].');show();"><img src="'.$data['url_foto'].'" alt="'.$data['name_foto'].'"></a>';
 }
 echo $galereya;
+
 /*
 foreach ($filelist as $filename){
     $galereya .="<a href=\"img/real/$filename\" target=\"_blank\"><img src=\"img/small/$filename\" alt=\"$filename\"></a>";
 }*/
 ?>
         <div class="cleardiv"></div>
+        <form action="load_file.php" method="POST" enctype="multipart/form-data">
+	<p>Загрузите файл на сервер</p>
+	<input type="text" id="file_name" name="name" >
+	<input type="file" name="photo[]" multiple accept="image/jpeg"><br><br>
+	<input type="submit" value="Сохранить">
+	
+</form>
     </section>
 </main>
 <?

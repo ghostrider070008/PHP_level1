@@ -1,6 +1,17 @@
 <link rel='stylesheet' href='css/style.css' />
 <script src="js/jquery.js"></script>
 <script>
+    function show()
+		{
+			$.ajax({
+				url: "zadanie1.php",
+				cache: false,
+				success: function(html){
+					$("#content").html(html);
+				}
+			});
+		}
+	
 	function f(id_good, views_count){
 		$.ajax({
 			method:"GET",
@@ -18,9 +29,10 @@
         })
 	}
 </script>
+<div id="content">
 <h1>Галерея изображений</h1>
 <main>
-    <section id="content">
+    <section>
 <?
 $responce = scandir("img/small/");
 $filelist = [];
@@ -43,7 +55,7 @@ $sql = "select * from foto order by views desc";
 $res = mysqli_query($connect,$sql);
 $galereya='';
 while ($data = mysqli_fetch_assoc($res)){
-$galereya.='<a href="page2.php?id='.$data['id'].'&v='.$data['views'].'" target="_blank" onclick="f('.$data['id'].','.$data['views'].')"><img src="'.$data['url_foto'].'" alt="'.$data['name_foto'].'"></a>';
+$galereya.='<a href="page2.php?id='.$data['id'].'&v='.$data['views'].'" target="_blank" onclick="f('.$data['id'].','.$data['views'].');show();"><img src="'.$data['url_foto'].'" alt="'.$data['name_foto'].'"></a>';
 }
 echo $galereya;
 /*
@@ -65,4 +77,5 @@ function find_filename($responce_f){
     return $filelist_f;
 }
 ?>
+</div>
 

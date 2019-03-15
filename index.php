@@ -1,71 +1,90 @@
+<link rel='stylesheet' href='css/style.css' />
+<script src="js/jquery.js"></script>
+<script>
+    function show()
+		{
+			$.ajax({
+				url: "zadanie1.php",
+				cache: false,
+				success: function(html){
+					$("#content").html(html);
+				}
+			});
+		}
+	
+	function f(id_good, views_count){
+		$.ajax({
+			method:"GET",
+			url:"server.php",
+            cashe: false,
+			data: {id:id_good,v:views_count},
+		})
+        $.ajax({
+			method:"GET",
+			url:"page2.php",
+			data: {id:id_good}
+		})
+        .done(function(answer){
+            
+        })
+	}
+</script>
+<div id="content">
+<h1>Галерея изображений</h1>
+<main>
+    <section>
+<?
+$responce = scandir("img/small/");
+$filelist = [];
+$responce_real = scandir("img/real/");
+$filelist_real = [];
+$filelist = find_filename($responce);
+$filelist_real = find_filename($responce_real);
+/*foreach ($responce as $value){
+    if (strpos($value,"jpg") != false){
+        $filelist [] = $value;
+    }
+}
+foreach ($responce_real as $value){
+    if (strpos($value,"jpg") != false){
+        $filelist [] = $value;
+    }
+}*/
+include('config.php');
+$sql = "select * from foto order by views desc";
+$res = mysqli_query($connect,$sql);
+$galereya='';
+while ($data = mysqli_fetch_assoc($res)){
+$galereya.='<a href="page2.php?id='.$data['id'].'&v='.$data['views'].'" target="_blank" onclick="f('.$data['id'].','.$data['views'].');show();"><img src="'.$data['url_foto'].'" alt="'.$data['name_foto'].'"><p class="views_p">Количество просмотров: '.$data['views'].'</p></a>';
+}
+echo $galereya;
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Minimalistika</title>
-    <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
-        <?
-
-        $content = "<div id=\"content\">";
-        $h1 = "<h1>minimalistica</h1>";
-        $menu = "<ul id=\"menu\">";
-        $li1 = "<li><a href=\"#\">home</a></li>";
-        $li2 = "<li><a href=\"#\">archive</a></li>";
-        $li3 = "<li><a href=\"#\">contact</a></li>";
-        $post = "<div class=\"post\">";
-        $details = "<div class=\"details\">";
-        $h2 = "<h2><a href=\"#\">Nunc commodo euismod massa quis vestibulum</a></h2>";
-        $p_info ="<p class=\"info\">posted 3 hours ago in <a href=\"#\">general</a></p>";
-        $class_body = "<div class=\"body\">";
-        $body_p = "<p>Nunc eget nunc libero. Nunc commodo euismod massa quis vestibulum. Proin mi nibh, dignissim a pellentesque at, ultricies sit amet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel lorem eu libero laoreet facilisis. Aenean placerat, ligula quis placerat iaculis, mi magna luctus nibh, adipiscing pretium erat neque vitae augue. Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquetut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at ipsum.</p>";
-        $col1 = "<div class=\"col\">";
-        $h31 = "<h3><a href=\"#\">Ut enim risus rhoncus</a></h3>";
-        $h3_p = "<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>";
-        $p_not = "<p>&not; <a href=\"#\">read more</a></p>";
-        $col2 = $col1;
-        $h32 = "<h3><a href=\"#\">Maecenas iaculis leo</a></h3>";
-        $h3_p2 = "<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>";
-        $col_last = "<div class=\"col last\">";
-        $h3_last = "<h3><a href=\"#\">Quisque consectetur odio</a></h3>";
-        $h3_p_last = "<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>";
-        $footer = "<div id=\"footer\">";
-        $footer_p = "<p>Copyright &copy; <em>minimalistica</em> &middot; Design: Luka Cvrk, <a href=\"http://www.solucija.com/\" title=\"Free CSS Templates\">Solucija</a></p>";
-
-
-
-
-
-        
-        
-        $details .= $h2.$p_info."</div>"; 
-        $class_body .= $body_p."</div><div class=\"x\"></div></div>" ;
-        $post .= $details.$class_body;
-        $col1 .= $h31.$h3_p.$p_not."</div>";
-        $col2 .= $h32.$h3_p2.$p_not."</div>";
-        $col_last .= $h3_last.$h3_p_last.$p_not.'</div>';
-        $footer .= $footer_p.'</div>';
-
-
-
-
-        $menu .= $li1.$li2.$li3;
-        $menu .="</ul>";
-        $content .= $h1;
-        $content .= $menu;
-        $content .= $post;
-        $content .= $col1;
-        $content .= $col2;
-        $content .= $col_last;
-        $content .= $footer;
-
-        $content .= "</div>";
-        echo $content;
-        
-        ?>
-</body>
-</html>
-
+/*
+foreach ($filelist as $filename){
+    $galereya .="<a href=\"img/real/$filename\" target=\"_blank\"><img src=\"img/small/$filename\" alt=\"$filename\"></a>";
+}*/
+?>
+        <div class="cleardiv"></div>
+        <form action="load_file.php" method="POST" enctype="multipart/form-data">
+	<p>Загрузите файл на сервер</p>
+	<label for="file_name">Введите наименование изображения:</label><br>
+	<input type="text" id="file_name" name="name"><br>
+	<input type="file" name="photo[]" multiple accept="image/jpeg"><br><br>
+	<input type="submit" id="button" value="Сохранить">
+	
+</form>
+    </section>
+</main>
+<?
+/*Функция поиска файлов в директории*/
+function find_filename($responce_f){
+    foreach ($responce_f as $value){
+        if (strpos($value,"jpg") != false){
+            $filelist_f [] = $value;
+        }
+    }
+    return $filelist_f;
+}
+?>
+</div>
 

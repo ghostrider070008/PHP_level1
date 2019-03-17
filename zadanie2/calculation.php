@@ -2,7 +2,7 @@
 $a =(float)$_POST['a'];
 $b =(float)$_POST['b'];
 $oper = $_POST['oper'];
-$rezult = return_calc($_POST['oper'], $a, $b);
+$rezult = return_calc($_POST['operat'], $a, $b);
 echo $rezult;
 
 

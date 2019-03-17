@@ -1,18 +1,54 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <form method="POST">
-<input type="text" name="a" placeholder="Введите a">
-<p><select size="1" name="oper" placeholder="Введите a">
-    <option disabled>Выберите операцию</option>
-    <option value="+">+</option>
-    <option value="-">-</option>
-    <option value="*">*</option>
-    <option value="/">/</option>
-</select></p>
-<input type="text" name="b" placeholder="Введите b">
-<input type="submit" value="=">
 <?
-$a = $_POST['a'];
-$content = $a;
-$content .="<br>";
-echo $content;
-echo $_POST['oper'];
+$form = '';
+$form = '<input type="text" name="a" placeholder="Введите a" value="'.$_POST['a'].'">';
+$form .= '<select size="1" name="oper" style="width:130px">';
+
+$form .='<option disabled selected="selected">Выберите операцию</option>';
+$operation = $_POST['oper'];
+    switch ($operation){
+        case '+':{
+            $form .='<option selected="selected" value="+">+</option>';
+            $form .='<option value="-">-</option>';
+            $form .='<option value="*">*</option>';
+            $form .='<option value="/">/</option>';
+            break;
+        }
+        case '-':{
+            $form .='<option selected="selected" value="-">-</option>';
+            $form .='<option value="+">+</option>';
+            $form .='<option value="*">*</option>';
+            $form .='<option value="/">/</option>';
+            break;
+        }
+        case '*':{
+            $form .='<option selected="selected" value="*">*</option>';
+            $form .='<option value="+">+</option>';
+            $form .='<option value="-">-</option>';
+            $form .='<option value="/">/</option>';
+            break;
+        }
+        case '/':{
+            $form .='<option selected="selected" value="/">/</option>';
+            $form .='<option value="+">+</option>';
+            $form .='<option value="-">-</option>';
+            $form .='<option value="*">*</option>';
+            break;
+        }
+        default:{
+            $form .='<option value="+">+</option>';
+            $form .='<option value="-">-</option>';
+            $form .='<option value="*">*</option>';
+            $form .='<option value="/">/</option>';
+            break;
+        }
+    }
+$form .='</select>';
+$form .='<input type="text" name="b" placeholder="Введите b" value="'.$_POST['b'].'">';
+$form .='<input type="submit" name ="operat" value="=">';
+echo $form;
+include('calculation.php');
+
+?>
+

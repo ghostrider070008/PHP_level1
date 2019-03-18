@@ -24,4 +24,19 @@ while ($data = mysqli_fetch_assoc($res)){
     
 
     </section>
+    <section>
+        <div class="tovar">
+        <h2>Товар</h2>
+        <div class="t_1">
+            <img src="img/catalog/buts.jpg" alt="Картинка">
+            <p class="p_info">Info</p>
+            <div class="clear"></div>  
+        </div>
+        <div class="t_2">
+            <p class="p_price">Price</p>
+            <a href="#">Купить</a>
+            <div class="clear"></div>  
+        </div>
+        </div>  
+    </section>
 </main>

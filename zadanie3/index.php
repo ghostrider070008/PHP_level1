@@ -10,9 +10,9 @@
     <label for="otziv" class="for">Ваш отзыв</label>
     <textarea type="textarea" required placeholder="Введите Ваш отзыв..." id="otziv" name="otziv_user"></textarea><br>
     <input type="image" src="img/otziv.png" id="submit_btn">
-    <?print_r($_POST)?>
 </form>
 <div class="otziv_div">
     
+
 </div>
 </main>

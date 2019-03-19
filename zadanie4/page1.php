@@ -1,5 +1,8 @@
+<?
+echo (int)$_GET['id'];
+?>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
-<link rel='stylesheet' href='css/style.css' />
+<link rel='stylesheet' href='css/style_tovar.css' />
 
 <h1>Интернет-магазин</h1>
 <main>
@@ -8,7 +11,7 @@
 
 
 
-<?include('tovar.php')?>
+<?include('tovar_pol.php')?>
     <div class="clear"></div>      
     
 

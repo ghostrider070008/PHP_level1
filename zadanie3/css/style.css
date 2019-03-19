@@ -1,0 +1,11 @@
+#submit_btn:hover{
+    opacity: 1;
+    border-radius: 100px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    transition: all 0.5s;
+}
+#submit_btn{
+    opacity: 0.7;
+    transition: all 0.5s;
+    width: 200px;
+}

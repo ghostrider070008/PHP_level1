@@ -7,6 +7,7 @@ session_start();
 		var login = $("#login").val();
 		var pass = $("#pass").val();
             pass = "qweRTyuI"+pass+login;  
+			pass = md5(pass);
 		var str = "login="+login+"&pass="+pass;
 		$.ajax({
 			type: "POST",

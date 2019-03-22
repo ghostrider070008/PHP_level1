@@ -60,9 +60,19 @@ section{
     width: 200px;
     text-align: center;
 }
+.registr{
+    max-width: 88px;
+}
 a{
     display: block;
     width: 300px;
     text-align: center;
     float: left;
+}
+.registr:nth-child(1){
+margin-left: 70%;
+}
+.registr_h2{
+    float: left;
+    margin-left: 15px;
 }

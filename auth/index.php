@@ -1,0 +1,24 @@
+<script src="jquery.js"></script>
+<script>
+	function f(){
+		var login = $("#login").val();
+		var pass = $("#pass").val();
+		var str = "login="+login+"&pass="+pass;
+		$.ajax({
+			type: "POST",
+			url: "server.php",
+			data: str,
+			success: function(answer){
+				$("div").html(answer);
+			}
+		});
+
+	}
+
+</script>
+<div></div>
+	<p>Ваш логин</p>
+	<input value="<?=$_COOKIE['login']?>" type="text" id="login">
+	<p>Введите пароль</p>
+	<input value="<?=$_COOKIE['pass']?>" type="password" id="pass"><br><br>
+	<button onclick="f()">Войти</button>

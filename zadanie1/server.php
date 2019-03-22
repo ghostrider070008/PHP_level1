@@ -1,9 +1,7 @@
 <?
-session_start();
-
-
+//session_start();
 //session_id();
-print_r($_SESSION);
+//print_r($_SESSION);
 $login = strip_tags($_POST['login']);
 $pass = strip_tags($_POST['pass']);
 

@@ -1,8 +1,7 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <link rel='stylesheet' href='css/style.css' />
 <?
-session_start();
-print_r($_SESSION);
+//print_r($_SESSION);
 $content = '';
 $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';

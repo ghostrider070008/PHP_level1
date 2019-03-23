@@ -6,9 +6,19 @@ session_start();
 	function f(){
 		var login = $("#login").val();
 		var pass = $("#pass").val();
-            pass = "qweRTyuI"+pass+login;  
-			pass = md5(pass);
+		if (login == ''){
+			$.ajax({
+			success: function(){
+				$("#login").html('Заполните это поле');
+			}
+		})
+		}
+		else{
+			pass = "qweRTyuI"+pass+login;
+			console.log(pass);  
 		var str = "login="+login+"&pass="+pass;
+		console.log(str);
+		
 		$.ajax({
 			type: "POST",
 			url: "server.php",
@@ -19,11 +29,18 @@ session_start();
 		});
 
 	}
+}
 
 </script>
-<div></div>
+<?if ($_SESSION['autorization'] == -1){
+$correct = "Неправильный логин или пароль! Повторите снова!";
+}?>
+<div><?echo $correct?></div>
+
+	<form onsubmit="f();" action="server.php" method="POST">
 	<p>Ваш логин</p>
-	<input value="<?=$_SESSION['login']?>" type="text" id="login">
+	<input type="text" name="login" id="login" required placeholder="Введите логин">
 	<p>Введите пароль</p>
-	<input value="<?=$_SESSION['pass']?>" type="password" id="pass"><br><br>
-	<button onclick="f();">Войти</button>
+	<input type="password" name="pass" id="pass" required placeholder="Введите пароль"><br><br>
+	<input type="submit" value="Войти">
+	</form>

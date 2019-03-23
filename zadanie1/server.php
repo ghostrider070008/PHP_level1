@@ -1,27 +1,33 @@
 <?
-//session_start();
+session_start();
 //session_id();
-//print_r($_SESSION);
-$login = strip_tags($_POST['login']);
-$pass = strip_tags($_POST['pass']);
-$pass = "qweRTyuI".$pass.$login;
-$str = md5($pass);
-$connect = mysqli_connect("localhost","root","","lesson6php");
-$query = "select * from users where login='$login' and pass='$str'";
+print_r($_POST);
+$login_users = strip_tags($_POST['login']);
+$pass_users = strip_tags($_POST['pass']);
+echo $pass_users;
+$pass_users = "qweRTyuI".$pass_users.$login_users;
+$str = md5($pass_users);
+include('config.php');
+$query = "select * from users where login='$login_users' and pass='$str'";
 $res = mysqli_query($connect,$query);
 $data = mysqli_fetch_assoc($res);
 $id_user = $data['id'];
 
+
 if(mysqli_num_rows($res)>0){
-	$_SESSION['login']=$login;
-    $_SESSION['pass']=$pass;
+	$_SESSION['autorization'] = 1;
+    $_SESSION['id_users'] = $data['id']; 
+    $_SESSION['names'] = $data['names'];
+    $new_url = 'index.php';
+    header('Location: '.$new_url);
     echo "Вы успешно авторизованы! Добро пожаловать ".$data['names']."!";
-    $_SESSION['autorization'] = 1;
-    print_r($_SESSION);
+    //print_r($_SESSION);
     exit;
     
 }
 	
-else
-    echo "Неправильный логин или пароль! Повторите снова!";
-    $_SESSION['autorization'] = 0;
+else{
+    $_SESSION['autorization'] = -1;
+    $new_url = 'input.php';
+    header('Location: '.$new_url);
+}

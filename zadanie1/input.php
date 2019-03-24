@@ -12,12 +12,17 @@ session_start();
 			type: "POST",
 			url: "server.php",
 			data: str,
-			dataType:"json", 
 			success: function(answer){
+				if (answer == 'true'){
+				//console.log(answer);
+				//$("div").html(answer);
+				location.reload();
+				}
+				else
 				$("div").html(answer);
 			}
 		});
-		//location.reload();
+		//
 
 }
 

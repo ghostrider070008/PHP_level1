@@ -8,13 +8,12 @@ $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';
 $content .= '<nav>';
 if ($_GET['exit'] == "true") {
-    $_GET = [];
     exit_users();
 }
     if ($_SESSION['autorization'] == 1) {
         include('config.php');
 
-   $content .='<div class="greeting"><p>Добро пожаловать '.$_SESSION['names'].'!</p> <a href="index.php?exit=true">Выйти</a></div>';
+   $content .='<div class="greeting"><p>Добро пожаловать '.$_SESSION['names'].'!</p> <a href="index.php?exit=true" >Выйти</a></div>';
     }
     else {    
     $content .='<a href="input.php" class="registr"><h2 class="registr_h2">Войти</h2></a>';
@@ -36,6 +35,7 @@ if ($_GET['exit'] == "true") {
 </main>
 <? 
 function exit_users(){
+    $_GET = [];
     $_SESSION = [];
     session_destroy();
 }

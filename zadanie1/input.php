@@ -6,41 +6,33 @@ session_start();
 	function f(){
 		var login = $("#login").val();
 		var pass = $("#pass").val();
-		if (login == ''){
-			$.ajax({
-			success: function(){
-				$("#login").html('Заполните это поле');
-			}
-		})
-		}
-		else{
-			pass = "qweRTyuI"+pass+login;
-			console.log(pass);  
+			pass = "qweRTyuI"+pass+login; 
 		var str = "login="+login+"&pass="+pass;
-		console.log(str);
-		
 		$.ajax({
 			type: "POST",
 			url: "server.php",
 			data: str,
+			dataType:"json", 
 			success: function(answer){
 				$("div").html(answer);
 			}
 		});
+		//location.reload();
 
-	}
 }
 
 </script>
-<?if ($_SESSION['autorization'] == -1){
-$correct = "Неправильный логин или пароль! Повторите снова!";
+<?if ($_SESSION['autorization'] == 1){
+	echo "Успешно";
+	$new_url = 'index.php';
+    header('Location: '.$new_url);
 }?>
-<div><?echo $correct?></div>
-
-	<form onsubmit="f();" action="server.php" method="POST">
+<div></div>
+	<!--<form action="server.php" method="POST"></form>-->
 	<p>Ваш логин</p>
 	<input type="text" name="login" id="login" required placeholder="Введите логин">
 	<p>Введите пароль</p>
 	<input type="password" name="pass" id="pass" required placeholder="Введите пароль"><br><br>
-	<input type="submit" value="Войти">
-	</form>
+	<!--<input type="submit" value="Войти">
+	</form>-->
+	<button onclick="f()">Войти</button>

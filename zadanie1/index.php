@@ -2,6 +2,7 @@
 <link rel='stylesheet' href='css/style.css' />
 <?
 session_start();
+print_r($_SESSION);
 echo "Session_id=".session_id();
 $content = '';
 $content .= '<h1>Интернет-магазин</h1>';

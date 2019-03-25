@@ -1,13 +1,16 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <link rel='stylesheet' href='css/style.css' />
+<script src="js/jquery.js"></script>
 <?
 session_start();
-print_r($_SESSION);
-echo "Session_id=".session_id();
+//echo "Session_id=".session_id();
 $content = '';
 $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';
 $content .= '<nav>';
+?>
+<div class="cart"><a href=""><p>Корзина покупок</p></a></div>
+<?   
 if ($_GET['exit'] == "true") {
     $_GET = [];
     exit_users();
@@ -42,3 +45,10 @@ function exit_users(){
 }
 
 ?>
+<div class="cart_shop" onclick="addGoods()"><p>Корзина покупок</p></div>
+<script>
+function addGoods(){
+    $(".cart_shop").append("<div>Покупка 1</div>");
+}
+
+</script>    

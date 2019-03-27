@@ -5,6 +5,7 @@ CREATE DATABASE IF NOT EXISTS `lesson6php` CHARACTER SET utf8mb4 COLLATE utf8mb4
 USE `lesson6php`;
 
 #Cоздание таблицы
+
 CREATE TABLE `tovar` (
 `id` INT NOT NULL AUTO_INCREMENT,
 
@@ -18,6 +19,43 @@ CREATE TABLE `tovar` (
 PRIMARY KEY (`id`)
 
 );
+
+#Создание таблицы корзины
+CREATE TABLE `cart` (
+`id` INT NOT NULL AUTO_INCREMENT,
+
+`id_buyers` INT NOT NULL,
+`id_goods` INT NOT NULL,
+
+`count` INT NOT NULL,
+PRIMARY KEY (`id`));
+#Создание таблицы покупатели
+CREATE TABLE `buyers` (
+`id` INT NOT NULL AUTO_INCREMENT,
+
+`login` VARCHAR(20) NOT NULL,
+`pass` VARCHAR(32),
+
+`firstname` VARCHAR(25),
+`laststname` VARCHAR(50),
+
+`email` VARCHAR(70),
+`tel` VARCHAR(20),
+
+`adress` TEXT,
+PRIMARY KEY (`id`));
+
+#Создание таблицы заказы
+CREATE TABLE `orders` (
+`id` INT NOT NULL AUTO_INCREMENT,
+
+`id_buyers` INT NOT NULL,
+
+`id_goods` INT NOT NULL,
+
+`count` INT,
+`delivery` VARCHAR(255),
+PRIMARY KEY (`id`));
 
 # Добавление записи
 INSERT INTO `tovar` (`title`, `img`, `info`, `price`) VALUES ('Бутсы Adidas Nemeziz 18.1 FG DB2082 ', 'buts.jpg', 'Фантастические бутсы с уникальной тейпинговой системой - Adidas Nemeziz 18.1 FG. Дизайн Nemeziz был рожден благодаря спортивному тейпированию. Адидас Немезис способствуют скоростной игре на натуральном газоне. Эластичный материал Agility Bandage не сковывает движения, при этом надежно фиксирует зону щиколотки. Шипы Torsion Ribs обеспечивают надежное сцепление с игровой поверхностью. Компрессионная поддержка Nemeziz обеспечивает полный комфорт для молниеносных маневров. Улучши качество игры - закажи новые бутсы Adidas Nemeziz на FootballStore.ru', '1000');

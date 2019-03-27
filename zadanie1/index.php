@@ -1,9 +1,10 @@
+<?session_start();?>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <link rel='stylesheet' href='css/style.css' />
 <script src="js/jquery.js"></script>
 <?
-session_start();
-//echo "Session_id=".session_id();
+//session_start();
+echo "Session_id=".session_id();
 $content = '';
 $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';

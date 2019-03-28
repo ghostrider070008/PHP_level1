@@ -11,12 +11,12 @@ $pass_users = strip_tags($_POST['pass']);
 $pass_users = mysqli_real_escape_string($connect,$pass_users); //экранирование
 $_POST = [];
 //echo $pass_users;
-//$pass_users = "qweRTyuI".$pass_users.$login_users;
+$pass_users = "qweRTyuI".$pass_users.$login_users;
 $str = md5($pass_users);
 //print_r($str);
-$query = "select * from users where login='$login_users' and pass='$str'";
+$query = "select * from users where name_user='$login_users' and pass_user='$str';";
 $res = mysqli_query($connect,$query);
-//echo $query;
+echo $query;
 $data = mysqli_fetch_assoc($res);
 $id_user = $data['id'];
 

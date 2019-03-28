@@ -47,16 +47,12 @@ function exit_users(){
 }
 
 ?>
-<?
-print_r($data);
-$content2 = '<div class="cart_shop" onclick="addGoods1('.$data['id'].','.$session.','.$_SESSION['id_users'].')"><p>Корзина покупок</p></div>';
-echo $content2;
-?>
+<div class="cart_shop" onclick="item(1)"><p>Корзина покупок</p></div>
 <script>
 function addGoods(){
     $(".cart_shop").append("<div>Покупка 1</div>");
 }
-function addGoods1(id,session,id_buy){
+/*function addGoods1(id,session,id_buy){
         var 
 		var login = $("#login").val();
 		var pass = $("#pass").val();
@@ -68,6 +64,17 @@ function addGoods1(id,session,id_buy){
 			data: str,
 			success: function(){
 				
-			}
+			}*/
+            function item(id){
+    $.ajax({
+        type: 'POST',
+        url: 'views/cart.php',
+        data: 'id='+id,
+        success: function(data){
+            alert("Вы добавили товар в корзину!");
+            $(".cart_shop").html(data);
+        }
+    });
+}
 
 </script>    

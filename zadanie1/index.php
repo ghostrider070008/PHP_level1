@@ -5,6 +5,7 @@
 <?
 //session_start();
 echo "Session_id=".session_id();
+$session = session_id();
 $content = '';
 $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';
@@ -46,10 +47,27 @@ function exit_users(){
 }
 
 ?>
-<div class="cart_shop" onclick="addGoods()"><p>Корзина покупок</p></div>
+<?
+print_r($data);
+$content2 = '<div class="cart_shop" onclick="addGoods1('.$data['id'].','.$session.','.$_SESSION['id_users'].')"><p>Корзина покупок</p></div>';
+echo $content2;
+?>
 <script>
 function addGoods(){
     $(".cart_shop").append("<div>Покупка 1</div>");
 }
+function addGoods1(id,session,id_buy){
+        var 
+		var login = $("#login").val();
+		var pass = $("#pass").val();
+			pass = "qweRTyuI"+pass+login; 
+		var str = "id="+id+"&session="+session+"&id_buy";
+		$.ajax({
+			type: "POST",
+			url: "cart.php",
+			data: str,
+			success: function(){
+				
+			}
 
 </script>    

@@ -7,7 +7,8 @@
 require_once('../models/function.php');
 $id = 3;
 $session = session_id();
-addGoods_cart($id,$session);
+$id_buy = '';
+addGoods_cart($id,$session,$id_buy);
 //deleteGoods_cart(1, 1);
 //require_once('../config.php');
 /*

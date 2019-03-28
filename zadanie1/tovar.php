@@ -21,5 +21,9 @@ while ($data = mysqli_fetch_assoc($res)){
     $tovar .= '<a onclick="addGoods()" id="product_'.$data['id'].'">Купить</a><div class="clear"></div></div></div>';
     }
     echo $tovar;
+    $sql = "select * from tovar order by id asc";
+    $res = mysqli_query($connect,$sql);
+    $data = mysqli_fetch_assoc($res);
+    print_r($data);
 ?>
 

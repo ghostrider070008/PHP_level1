@@ -47,11 +47,11 @@ function exit_users(){
 }
 
 ?>
-<div class="cart_shop" onclick="item(1)"><p>Корзина покупок</p></div>
+<div class="cart_shop" onclick="addGoods(1)"><p>Корзина покупок</p></div>
 <script>
-function addGoods(){
+/*function addGoods(){
     $(".cart_shop").append("<div>Покупка 1</div>");
-}
+}*/
 /*function addGoods1(id,session,id_buy){
         var 
 		var login = $("#login").val();
@@ -65,7 +65,7 @@ function addGoods(){
 			success: function(){
 				
 			}*/
-            function item(id){
+            function addGoods(id){
     $.ajax({
         type: 'POST',
         url: 'views/cart.php',

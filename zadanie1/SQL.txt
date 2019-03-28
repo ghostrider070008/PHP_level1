@@ -73,3 +73,6 @@ INSERT INTO `tovar` (`title`, `img`, `info`, `price`) VALUES ('Куртка Nike Barce
 INSERT INTO `tovar` (`title`, `img`, `info`, `price`) VALUES ('Футболка хлопковая Adidas Real Madrid 2018/19','futbolka.jpg','Новая хлопковая футболка Real Madrid 2018/19 от немецкой компании Adidas. Модель трансформировалась из спортивной игровой футболки “королевского клуба” в уличную версию для повседневной жизни. Свободный крой футболки сочетает в себе современность и лаконичность, а специальная ткань Climalite отводит излишки влаги и поддерживает комфорт на протяжении всего времени. Футболка станет отличным вариантом для повседневной жизни и активного отдыха.',1990);
 
 INSERT INTO cart (id_buyers, id_goods, count, dates) VALUES (1, 2, 1, CURTIME());
+
+#удаление столбца таблицы
+alter table `cart` drop column `firstname`;

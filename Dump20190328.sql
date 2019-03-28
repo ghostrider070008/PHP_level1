@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.14, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: lesson6php
 -- ------------------------------------------------------
@@ -59,7 +59,7 @@ CREATE TABLE `cart` (
   `dates` datetime DEFAULT NULL,
   `session_id` varchar(32) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +68,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (2,1,2,1,'2019-03-27 14:53:43',NULL),(3,1,2,1,'2019-03-27 14:56:21',NULL),(4,1,2,1,'2019-03-27 15:02:25',NULL),(5,1,2,1,'2019-03-27 15:06:45',NULL),(6,1,3,1,'2019-03-27 16:05:47','bu8ekomsd5o4g77jbcgnvt7v2s0136c3'),(7,0,1,3,'2019-03-28 17:25:06','v0sub369co9afqcul37ov3c8rg3of0ui'),(8,1,1,1,'2019-03-28 17:31:22',NULL);
+INSERT INTO `cart` VALUES (10,1,3,1,'2019-03-28 21:28:55',NULL),(11,1,2,1,'2019-03-28 21:28:58',NULL),(12,1,1,1,'2019-03-28 21:29:01',NULL),(13,0,1,2,'2019-03-28 21:29:47','194kp7ovbh0fgqldmfuds4g491stvacs'),(14,0,2,2,'2019-03-28 21:29:50','194kp7ovbh0fgqldmfuds4g491stvacs');
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,6 +164,8 @@ CREATE TABLE `users` (
   `name_user` varchar(20) DEFAULT NULL,
   `e-mail_user` varchar(50) DEFAULT NULL,
   `pass_user` varchar(32) DEFAULT NULL,
+  `firstname` varchar(25) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -174,17 +176,9 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@mail.ru','e0167039a54b09d0d4386e5980e8ba4b');
+INSERT INTO `users` VALUES (1,'admin','admin@mail.ru','e0167039a54b09d0d4386e5980e8ba4b','Artem',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'lesson6php'
---
-
---
--- Dumping routines for database 'lesson6php'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -195,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-03-28 17:42:20
+-- Dump completed on 2019-03-28 21:58:14

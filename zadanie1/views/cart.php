@@ -8,16 +8,20 @@ require_once('../models/function.php');
 $id = strip_tags($_POST['id']);
 $session = session_id();
 $id_buy = $_SESSION['id_users'];
-print_r($_POST);
 $_SESSION['session_id'] = session_id();
-print_r($_SESSION);
 if ($_SESSION['autorization'] == 0){
 $id_buy = 0;
 }
-echo "<br>id=".$id;
-echo "<br>session=".$session;
-echo "<br>id_buy=".$id_buy;
 addGoods_cart($id,$session,$id_buy);
+if ($id_buy == 0){
+$sql = "SELECT * FROM cart where id_goods=$id and session_id='$session';";
+$res = mysqli_query($connect,$sql);
+$cart_content = '';
+$cart_content .= '<table>';
+while ($data = mysqli_fetch_assoc($res)){
+
+}
+}
 //addGoods_cart(1,$session,0);
 
 //deleteGoods_cart(1, 1);

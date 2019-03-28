@@ -68,6 +68,7 @@ a{
     width: 300px;
     text-align: center;
     float: left;
+    cursor: pointer;
 }
 .registr:nth-child(1){
 margin-left: 70%;
@@ -77,6 +78,7 @@ margin-left: 70%;
     margin-left: 15px;
 }
 .cart_shop{
+    display: none;
     position: fixed;
     width: 500px;
     min-height: 100px;

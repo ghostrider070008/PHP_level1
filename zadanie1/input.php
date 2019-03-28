@@ -28,7 +28,6 @@ session_start();
 
 </script>
 <?if ($_SESSION['autorization'] == 1){
-	echo "Успешно";
 	$new_url = 'index.php';
     header('Location: '.$new_url);
 }?>

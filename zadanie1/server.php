@@ -16,7 +16,7 @@ $str = md5($pass_users);
 //print_r($str);
 $query = "select * from users where name_user='$login_users' and pass_user='$str';";
 $res = mysqli_query($connect,$query);
-echo $query;
+//echo $query;
 $data = mysqli_fetch_assoc($res);
 $id_user = $data['id'];
 
@@ -24,10 +24,11 @@ $id_user = $data['id'];
 if(mysqli_num_rows($res)>0){
 	$_SESSION['autorization'] = 1;
     $_SESSION['id_users'] = $data['id']; 
-    $_SESSION['names'] = $data['names'];
+    $_SESSION['names'] = $data['firstname'];
     //$new_url = 'index.php';
     //header('Location: '.$new_url);
     $json_per = true;
+    echo $hson_per;
     echo json_encode($json_per);
     //echo "Вы успешно авторизованы! Добро пожаловать ".$data['names']."!";
     //print_r($_SESSION);

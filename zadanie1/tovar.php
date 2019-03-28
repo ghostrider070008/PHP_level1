@@ -18,12 +18,11 @@ while ($data = mysqli_fetch_assoc($res)){
     $tovar .= '<div class="clear"></div></div>';
     $tovar .= ' <div class="t_2">';
     $tovar .= '<p class="p_price">'.$data['price'].'&#8381;</p>';
-    $tovar .= '<a onclick="addGoods()" id="product_'.$data['id'].'">Купить</a><div class="clear"></div></div></div>';
+    $tovar .= '<a onclick="addGoods('.$data['id'].')" id="product_'.$data['id'].'">Купить</a><div class="clear"></div></div></div>';
     }
     echo $tovar;
     $sql = "select * from tovar order by id asc";
     $res = mysqli_query($connect,$sql);
     $data = mysqli_fetch_assoc($res);
-    print_r($data);
 ?>
 

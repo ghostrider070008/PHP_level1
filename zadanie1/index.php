@@ -2,7 +2,9 @@
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <link rel='stylesheet' href='css/style.css' />
 <script src="js/jquery.js"></script>
+<script src="js/function.js"></script>
 <?
+require_once('config.php');
 //session_start();
 echo "Session_id=".session_id();
 $session = session_id();
@@ -11,14 +13,14 @@ $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';
 $content .= '<nav>';
 ?>
-<div class="cart"><a href=""><p>Корзина покупок</p></a></div>
+<div class="cart" onclick="f_open_cart();cart()"><p>Корзина покупок</p></div>
 <?   
 if ($_GET['exit'] == "true") {
     $_GET = [];
     exit_users();
 }
     if ($_SESSION['autorization'] == 1) {
-        include('config.php');
+        
 
    $content .='<div class="greeting"><p>Добро пожаловать '.$_SESSION['names'].'!</p> <a href="index.php?exit=true">Выйти</a></div>';
     }
@@ -47,7 +49,7 @@ function exit_users(){
 }
 
 ?>
-<div class="cart_shop" onclick="addGoods(1)"><p>Корзина покупок</p></div>
+<div class="cart_shop"></div>
 <script>
 /*function addGoods(){
     $(".cart_shop").append("<div>Покупка 1</div>");
@@ -65,16 +67,6 @@ function exit_users(){
 			success: function(){
 				
 			}*/
-            function addGoods(id){
-    $.ajax({
-        type: 'POST',
-        url: 'views/cart.php',
-        data: 'id='+id,
-        success: function(data){
-            alert("Вы добавили товар в корзину!");
-            $(".cart_shop").html(data);
-        }
-    });
-}
+    
 
 </script>    

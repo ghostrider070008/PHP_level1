@@ -27,7 +27,7 @@ function addGoods_cart($id,$session,$id_buy){
             $sql = "SELECT * FROM cart where id_goods=$id and session_id='$session';";
             $res = mysqli_query($connect,$sql);
             $data = mysqli_fetch_assoc($res);
-            //print_r($data);
+            print_r($data);
             if(mysqli_num_rows($res)==0){
                 $counts = 1;
                 $sql = "INSERT INTO cart (session_id, id_buyers, id_goods, count, dates) VALUES ('$session', $id_buy,$id, $counts, CURTIME());";
@@ -58,3 +58,4 @@ function deleteGoods_cart($id, $id_buy){
     $res = mysqli_query($connect,$sql);
     echo $res;
 }
+?>

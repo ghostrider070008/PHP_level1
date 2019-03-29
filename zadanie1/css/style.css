@@ -82,9 +82,12 @@ margin-left: 70%;
     position: fixed;
     width: 500px;
     min-height: 100px;
-    background: red;
+    background: #f0e1e1;
     left: 400px;
     top: 200px;
     overflow: auto;
     max-height: 600px;
+}
+.cart{
+    cursor: pointer;
 }

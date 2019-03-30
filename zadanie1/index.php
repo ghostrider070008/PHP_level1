@@ -6,6 +6,11 @@
 <?
 require_once('config.php');
 //session_start();
+if ($_SESSION == []){
+    $_SESSION['autorization'] = 0;
+    $_SESSION['id_buy'] = 0;
+}
+print_r($_SESSION);
 echo "Session_id=".session_id();
 $session = session_id();
 $content = '';

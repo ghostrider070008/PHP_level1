@@ -3,6 +3,18 @@
 <link rel='stylesheet' href='css/style.css' />
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/function.js"></script>
+
+<div class="cart-overlay">
+    <div class="cart_mod">
+        <div class="modal">
+            <h1>Модальное окно</h1>
+        </div>
+    </div>
+</div>
+
+<h1>Интернет-магазин</h1>
+<main>
+    <nav>
 <?
 require_once('config.php');
 //session_start();
@@ -10,13 +22,10 @@ if ($_SESSION == []){
     $_SESSION['autorization'] = 0;
     $_SESSION['id_buy'] = 0;
 }
-print_r($_SESSION);
-echo "Session_id=".session_id();
+//print_r($_SESSION);
+//echo "Session_id=".session_id();
 $session = session_id();
 $content = '';
-$content .= '<h1>Интернет-магазин</h1>';
-$content .= '<main>';
-$content .= '<nav>';
 ?>
 <a class="popup-open" href="#">Открыть popup</a>
 <div class="popup-fade">
@@ -25,6 +34,7 @@ $content .= '<nav>';
         <p>Всплывающие окна имеют широкий диапазон применений...</p>
     </div>        
 </div>
+<div class="cart" onclick="f_open_cart();cart()"><p>Корзина покупок</p></div>
 <div class="cart" onclick="f_open_cart();cart()"><p>Корзина покупок</p></div>
 <?   
 if ($_GET['exit'] == "true") {

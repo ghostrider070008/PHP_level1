@@ -1,0 +1,68 @@
+<a href="#win1" class="btn">ќткрыть окно 1</a>
+<div class="dm-overlay" id="win1">
+    <div class="dm-table">
+        <div class="dm-cell">
+            <div class="dm-modal">
+                <a href="#close" class="close"></a>
+                <h3>«аголовок модального окна</h3>
+                <div class="pl-left">
+                    <img src="http://lorempixel.com/320/320/people/some-text">
+                </div>
+                <p>“екстовое содержание....</p>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+/* слой затемнени€ */
+.dm-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+/* активируем слой затемнени€ и модальное окно */
+.dm-overlay:target {
+    display: block;
+/* анимаци€ и врем€ задержки */
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+}
+/* блочна€ таблица */
+.dm-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+/* €чейка блочной таблицы */
+.dm-cell {
+    display: table-cell;
+    padding: 0 1em;
+    vertical-align: middle;
+    text-align: center;
+}
+/* модальный блок */
+.dm-modal {
+    display: inline-block;
+    padding: 20px;
+/* максимально возможна€ ширина */
+    max-width: 50em;
+    background: #607d8b;
+/* внешн€€ тень блока */
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    color: #cfd8dc;
+    text-align: left;
+/* анимаци€ и врем€ задержки */
+    -webkit-animation: fade .8s;
+    -moz-animation: fade .8s;
+    animation: fade .8s;
+}
+</style>

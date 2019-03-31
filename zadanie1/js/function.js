@@ -15,7 +15,8 @@ function cart(){
         url: 'controllers/cart.php',
         success: function(data){
             //alert("Вы добавили товар в корзину!");
-            $(".cart_shop").html(data);
+            //$(".cart_shop").html(data);
+            $(".popup").html(data);
         }
     });
 }

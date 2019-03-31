@@ -1,7 +1,7 @@
 <?session_start();?>
 <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
 <link rel='stylesheet' href='css/style.css' />
-<script src="js/jquery.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/function.js"></script>
 <?
 require_once('config.php');
@@ -18,6 +18,13 @@ $content .= '<h1>Интернет-магазин</h1>';
 $content .= '<main>';
 $content .= '<nav>';
 ?>
+<a class="popup-open" href="#">Открыть popup</a>
+<div class="popup-fade">
+    <div class="popup">
+        <a class="popup-close" href="#">Закрыть</a>
+        <p>Всплывающие окна имеют широкий диапазон применений...</p>
+    </div>        
+</div>
 <div class="cart" onclick="f_open_cart();cart()"><p>Корзина покупок</p></div>
 <?   
 if ($_GET['exit'] == "true") {
@@ -75,3 +82,30 @@ function exit_users(){
     
 
 </script>    
+<script>
+$(document).ready(function($) {
+    $('.popup-open').click(function() {
+        $('.popup-fade').fadeIn();
+        cart();
+        return false;
+    });    
+    
+    $('.popup-close').click(function() {
+        $(this).parents('.popup-fade').fadeOut();
+        return false;
+    });        
+
+    $(document).keydown(function(e) {
+        if (e.keyCode === 27) {
+            e.stopPropagation();
+            $('.popup-fade').fadeOut();
+        }
+    });
+    
+    $('.popup-fade').click(function(e) {
+        if ($(e.target).closest('.popup').length == 0) {
+            $(this).fadeOut();                    
+        }
+    });
+});
+</script>

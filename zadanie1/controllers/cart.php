@@ -11,7 +11,7 @@ $sql = "SELECT * FROM cart INNER JOIN tovar ON (cart.id_goods=tovar.id) where se
 $res = mysqli_query($connect,$sql);
 $cart_content = '';
 //$cart_content = '<div class="modal">';
-$cart_content .= '<div class="modal-close" onclick="f_close_cart()"><p>X</p></div>';
+$cart_content .= '<div class="modal-close" onclick="f_close_cart()"><p id="p-modal-close">X</p></div>';//mouseover="hover_p_modal_close_in()"
 $cart_content .= '<h1>Корзина покупок</h1>';
     if (mysqli_num_rows($res)==0){
     $cart_content .= '<div><p>Ваша карзина пуста</p></div>';

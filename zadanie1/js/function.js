@@ -31,7 +31,7 @@ function decGoodsCart(id){
         }
     });
 }
-function cart(){
+function cart(){ // функция формирования корзины
     $.ajax({
         type: 'POST',
         url: 'controllers/cart.php',
@@ -42,6 +42,9 @@ function cart(){
             //$(".popup").html(data);
         }
     });
+}
+function hover_p_modal_close_in(){
+  //  $("#p-modal-close").css({'color': '#A9F16C','transform': 'scale(1.4)', 'transition': 'all 500ms'}); смена css свойства
 }
 function f_open_cart(){
     //$(".cart_shop").css({'display':'block','cursor':'pointer'});

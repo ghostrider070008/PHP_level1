@@ -171,17 +171,25 @@ margin-left: 70%;
 }
 .modal-close{
     cursor: pointer;
-    border: white solid 1px;
-    border-radius: 50; 
     width: 30px;
     height: 30px;
-    border-radius: 100%;
     text-align: center;
     position: relative;
     left: 90%;
+    font-size: 12pt;
 }
-.modal-close p{
+
+#p-modal-close{
     margin-top: 6px;
+    transform: scale(1);
+    transition: all 1s;
+
+}
+#p-modal-close:hover{
+    margin-top: 6px;
+    transform: scale(1.4);
+    transition: all 1s;
+    color: brown;
 
 }
 

@@ -5,12 +5,12 @@
 <script src="../js/jquery.maskedinput.min.js"></script>
 <div class="registration-overlay">
     <div class="registr">
-        <form action="" method="POST">
+        <form action="../controllers/registr.php" method="POST">
         <fieldset>
             <legend>Форма регистрации</legend>
             <input type="text" id="login_input" name="login" required placeholder="Логин..." maxlength="30"><br>
             <input type="password" id="password_input1" name="pass" required placeholder="Пароль..."maxlength="20">
-            <input type="password" id="password_input2" name="pass" required placeholder="Пароль еще раз..." maxlength="20"><br>
+            <input type="password" id="password_input2" name="pass2" required placeholder="Пароль еще раз..." maxlength="20"><br>
             <input type="text" id="firstname_in" name="firstname" required placeholder="Ваше имя..." >
             <input type="text" id="lname_in" name="lastname" required placeholder="Ваша фамилия..." ><br>
             <input type="email" id="email_in" name="email" required placeholder="Ваш e-mail..." >

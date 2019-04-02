@@ -55,3 +55,6 @@ function f_close_cart(){
     //$(".cart_shop").css({'display':'none'});
     $(".cart-overlay").fadeOut(500);
 }
+function reload(){
+    location.reload();
+}

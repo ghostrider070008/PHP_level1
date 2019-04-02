@@ -103,4 +103,12 @@ function addGoods_cart_inc($id,$session,$id_buy){// увеливение кол�
          }
 
     }
+    function input_captcha()
+        $a = rand(0,100);
+        $b = rand(0,100);
+        $rez = $a + $b;
+        $content_captha = '<div class="div-captcha">'.$a.' + '.$b.' =?</div>';
+        
+
+    }
 ?>

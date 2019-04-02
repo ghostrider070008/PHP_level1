@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/function.js"></script>
-
 <div class="cart-overlay">
     <div class="cart_mod">
         <div class="modal">
@@ -18,6 +17,7 @@
 <main>
     <nav>
 <?
+
 require_once('config.php');
 //session_start();
 if ($_SESSION == []){

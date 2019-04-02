@@ -16,6 +16,10 @@
             <input type="email" id="email_in" name="email" required placeholder="Ваш e-mail..." >
             <input type="tel" id="tel" name="tel" placeholder="Ваш телефон..." maxlength="20"><br>
             <textarea id="adress" name="adress" placeholder="Ваш адрес..." ></textarea><br>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" name="agree" class="custom-control-input" id="customCheck">
+              <label class="custom-control-label" for="customCheck">Нажимая кнопку, я принимаю условия <b>Пользовательского соглашения</b> и даю своё согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных».</label>
+            </div>
             <button id="btn_home" onclick="window.location='../index.php'">Отмена</button>
             <input type="submit" class="btn_submit" value="Зарегистрироваться">
 

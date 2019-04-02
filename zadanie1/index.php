@@ -9,7 +9,7 @@
 <div class="cart-overlay">
     <div class="cart_mod">
         <div class="modal">
-            <h1>Модальное окно</h1>
+            
         </div>
     </div>
 </div>

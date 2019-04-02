@@ -1,4 +1,4 @@
-<?
+<?session_start();
 require_once('../config.php');
 function addGoods_cart($id,$session,$id_buy){ // добавление товара в корзину на странице с товарами
     global $connect;
@@ -103,11 +103,13 @@ function addGoods_cart_inc($id,$session,$id_buy){// увеливение кол�
          }
 
     }
-    function input_captcha()
+    function input_captcha(){
+        global $a, $b;
         $a = rand(0,100);
         $b = rand(0,100);
         $rez = $a + $b;
-        $content_captha = '<div class="div-captcha">'.$a.' + '.$b.' =?</div>';
+        return $rez;
+        //$content_captha = '<div class="div-captcha">'.$a.' + '.$b.' =?</div>';
         
 
     }

@@ -4,7 +4,11 @@
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/jquery.maskedinput.min.js"></script>
-<?
+<?print_r($_POST['captcha']);
+print_r($_SESSION['captcha']);
+$captcha = addslashes(strip_tags($_POST['captcha']));
+echo $captcha;
+if ($_SESSION['captha']==$captcha){
 require_once('../config.php');
 //print_r($_POST);
 $login_user = addslashes(strip_tags($_POST['login']));
@@ -59,7 +63,11 @@ $res = mysqli_query($connect,$sql);
         $content = '<div class="home" onclick="registr();">Еще раз</div>';
         echo $content;
     }
-};
+}
+}
+else{
+    echo 'Решите правильно пример!<div class="home" onclick="registr();">Еще раз</div>';
+}
 ?>
 <script>
 

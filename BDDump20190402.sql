@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.15, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.13, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: lesson6php
 -- ------------------------------------------------------
@@ -32,7 +32,7 @@ CREATE TABLE `buyers` (
   `tel` varchar(20) DEFAULT NULL,
   `adress` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,6 @@ CREATE TABLE `buyers` (
 
 LOCK TABLES `buyers` WRITE;
 /*!40000 ALTER TABLE `buyers` DISABLE KEYS */;
-INSERT INTO `buyers` VALUES (11,'admin','7c7910510a3d07ffc2df492bc1c4f026','Тест','Тест','test@mail.ru','+7(999) 999-9999','Тестовая запись...'),(12,'123','d38089f0549f0a466eed5c192f5568d5','123','123','123@mail.ru','+7(111) 111-1111','123'),(13,'456','2d98b8bc46ea1bc2fdea69ea296d007f','456','456','456@mail.ru','+7(887) 777-7777','456');
 /*!40000 ALTER TABLE `buyers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -180,14 +179,6 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'admin','admin@mail.ru','e0167039a54b09d0d4386e5980e8ba4b','Artem',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'lesson6php'
---
-
---
--- Dumping routines for database 'lesson6php'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -198,4 +189,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-02 16:59:44
+-- Dump completed on 2019-04-02 21:52:21

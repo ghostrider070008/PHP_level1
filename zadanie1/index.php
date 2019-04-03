@@ -42,7 +42,6 @@ if ($_GET['exit'] == "true") {
     }
     else {    
     $content .='<a href="input.php" class="registrat"><h2 class="registr_h2">Войти</h2></a>';
-    $content .='<h2 class="registr_h2">или</h2>';
     $content .='<a href="views/registr.php" target="_self" class="registrat"><h2 class="registr_h2">Зарегистрироваться</h2></a>';
     }
     echo $content;?>

@@ -58,3 +58,23 @@ function f_close_cart(){
 function reload(){
     location.reload();
 }
+function f_input(){ //функция проверки входа
+		var login = $("#login").val();
+		var pass = $("#pass").val();
+			pass = "qweRTyuI"+pass+login; 
+		var str = "login="+login+"&pass="+pass;
+		$.ajax({
+			type: "POST",
+			url: "server.php",
+			data: str,
+			success: function(answer){
+				if (answer == 'true'){
+				//console.log(answer);
+				//$("div").html(answer);
+				location.reload();
+				}
+				else
+				$(".answer").html(answer);
+			}
+        });
+    }

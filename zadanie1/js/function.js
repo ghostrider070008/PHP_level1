@@ -58,7 +58,7 @@ function f_close_cart(){
 function reload(){
     location.reload();
 }
-function f_input(){ //функция проверки входа
+function f_input_buy(){ //функция проверки входа
 		var login = $("#login").val();
 		var pass = $("#pass").val();
 			pass = "qweRTyuI"+pass+login; 

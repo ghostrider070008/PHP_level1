@@ -204,3 +204,42 @@ input{
     margin-bottom: 15px;
     border-radius: 30px 30px 30px 30px;
 }
+#btn-input{
+    display: block;
+    float: none;
+    width: 288px;
+    height: 50px;
+    margin: 15px auto;
+    transform: scale(1);
+    border-radius: 15px;
+    transition-property: transform, filter;
+    transition-duration: 1s;
+}
+#btn-input:hover{
+    cursor: pointer; 
+    transform: scale(1.2);
+    filter: drop-shadow(0.4em 0.4em 5px rgba(122,122,122,0.5));
+    transition-property: transform, filter;
+    transition-duration: 1s;
+}
+#conteiner{
+    display: table;
+    width: 100%;
+    height: 100vh;
+
+}
+#form-input{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#password{
+    display: block;
+    margin: 15px auto;
+    padding: 0 10px;
+}
+#login{
+    display: block;
+    margin: 15px auto;
+    padding: 0 10px;
+}

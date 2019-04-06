@@ -3,7 +3,7 @@ session_start();
 ?>
 <script src="js/jquery.js"></script>
 <script>
-	function f(){
+	function f_input_buy(){
 		var login = $("#login").val();
 		var pass = $("#pass").val();
 			pass = "qweRTyuI"+pass+login; 

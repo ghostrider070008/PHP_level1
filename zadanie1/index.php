@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <meta content="text/html">
 <meta http-equiv="Content-Type">
+<html lang="ru">
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/function.js"></script>

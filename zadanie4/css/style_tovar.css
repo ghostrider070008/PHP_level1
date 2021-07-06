@@ -1,0 +1,56 @@
+h1{
+    text-align: center;
+}
+img{
+    width: 500px;
+    height: 400px;
+    display: block;
+    float: left;
+}
+
+.tovar{
+    width: 1015px;
+    margin: 0 auto;
+}
+
+.clear{
+    clear: both;
+}
+h2{
+    display: block;
+    float: none;
+    text-decoration: none;
+    color: DarkGoldenRod;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    
+}
+section{
+    width: 84%;
+    margin: 0 auto;
+}
+.p_info{
+    text-align: justify;
+    margin: 0;
+    margin-left: 15px;
+    float: left;
+    width: 497px;
+    font-size: 18pt;
+}
+.p_price{
+    color: CadetBlue;
+    font-size: 16pt;
+    display: block;
+    float: left;
+    margin: 0;
+    width: 500px;
+    text-align: center;
+}
+a{
+    display: block;
+    width: 300px;
+    text-align: center;
+    float: left;
+}

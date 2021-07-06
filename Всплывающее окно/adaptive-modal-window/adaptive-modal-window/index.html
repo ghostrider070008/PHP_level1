@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Демо: Модальное окно абсолютно по центру</title>
+	<meta name="author" content="dobrovoi"/>
+    <meta name="description" content="Пример модального окна расположенного абсолютно по центру, исключительно средствами CSS3" />
+    <meta name="keywords" content="модальное окно, css3, центрирование" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" type="image/ico" href="http://dbmast.ru/favicon.ico" />
+</head>
+<body> 
+    <h1 style="text-align: center;">Пример: Модальное окно абсолютно по центру</h1>
+    <p style="text-align: center;">Изменяйте размер окна просмотра, или же воспользуйтесь эмулятором<br/> мобильных устройств из состава инструментов разработчика вашего браузера</p>
+    <div class="btn-block">
+        <a href="#win1" class="btn">Открыть окно 1</a>
+        <a href="#win2" class="btn">Открыть окно 2</a>
+        <a href="#win3" class="btn">Открыть окно 3</a>
+        <a href="#win4" class="btn">Открыть окно 4</a>
+    </div>
+<!-- Модальное Окно №1 --> 
+    <div class="dm-overlay" id="win1">
+        <div class="dm-table">
+            <div class="dm-cell">
+                <div class="dm-modal">
+                    <a href="#close" class="close"></a>
+                    <h3>Модальный блок №1 абсолютно по центру.</h3>
+                    <div class="pl-left">
+                        <img src="http://lorempixel.com/320/320/people/some-text">
+                    </div>
+                    <p>Окно выводится строго по центру, по горизонтали и по вертикали, внутри контейнера с относительным позиционированием. В данном примере показана возможность использования встроенных миниатюр, разположенных слева в div-контейнере с выделенным классом <code>.pl-left</code></p>
+                    <p>Размер блока миниатюр определил в 25% от родительского контейнера, тем самым обеспечив возможность пропорционального изменения, при просмотре на экранах различных пользовательских устройств.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Модальное Окно №2 -->
+    <div class="dm-overlay" id="win2">
+        <div class="dm-table">
+            <div class="dm-cell">
+                <div class="dm-modal green">
+                    <a href="#close" class="close"></a>
+                    <h3>Модальный блок №2 абсолютно по центру.</h3>
+                    <div class="pl-right">
+                        <img src="http://lorempixel.com/320/320/people/some-text">
+                    </div>
+                    <p>Окно выводится строго по центру, по горизонтали и по вертикали, внутри контейнера с относительным позиционированием. В данном примере показана возможность использования встроенных миниатюр, разположенных слева в div-контейнере с выделенным классом <code>.pl-right</code></p>
+                    <p>Размер блока миниатюр определил в 25% от родительского контейнера, тем самым обеспечив возможность пропорционального изменения, при просмотре на экранах различных пользовательских устройств.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Модальное Окно №3 -->
+    <div class="dm-overlay" id="win3">
+        <div class="dm-table">
+            <div class="dm-cell">
+                <div class="dm-modal cyan">
+                    <a href="#close" class="close"></a>
+                    <h3>Модальный блок №3 абсолютно по центру.</h3>
+                        <img src="http://lorempixel.com/960/640/people/some-text">
+                    <p>Окно выводится строго по центру, с встроенным изображением, которое отлично подстраивается под размеры ьодального блока, вне зависимости от фиксированных размеров оригинальной картинки, использовал  <code>width: 100%;</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Модальное Окно №4 -->   
+    <div class="dm-overlay" id="win4">
+        <div class="dm-table">
+            <div class="dm-cell">
+                <div class="dm-modal teal">
+                    <a href="#close" class="close"></a>
+                    <h3>Модальный блок №4 абсолютно по центру.</h3>
+                    <div class="video">
+                        <iframe width="1280" height="720" src="http://www.youtube.com/embed/HDm94zrbXJA" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p>Окно выводится абсолютно по центру, с встроенным адаптивным видеоплеером популярных видеосервисов, предлагающих различные методы вставки видео на сайт <code>iframe, object и embed</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p style="text-align: center;">сделано с любовью: <a href="http://twitter.com/dobrovoi">@dobrovoi</a></p>
+    <p style="text-align: center;"><a href="http://dbmast.ru/adaptivnoe-modalnoe-okno-strogo-po-centru">&laquo;&laquo; Изучить детали</a></p>
+</body>
+</html>

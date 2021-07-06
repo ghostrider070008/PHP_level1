@@ -1,0 +1,245 @@
+h1{
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 180px;
+    display: block;
+    float: left;
+}
+.p_2{
+    display: block;
+}
+
+.tovar{
+    float: left;
+    height: 390px;
+    margin-right: 15px;
+}
+.tovar:nth-child(3n){
+    margin-right: 0;
+}
+.clear{
+    clear: both;
+}
+.name_tov{
+    display: block;
+    float: none;
+    text-decoration: none;
+    color: DarkGoldenRod;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 84px;
+    width: 369px;
+}
+h2{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 84px;
+    
+}
+section{
+    width: 84%;
+    margin: 0 auto;
+}
+.p_info{
+    text-align: justify;
+    margin: 0;
+    margin-left: 15px;
+    float: left;
+    width: 300px;
+}
+.p_price{
+    color: CadetBlue;
+    font-size: 16pt;
+    display: block;
+    float: left;
+    margin: 0;
+    width: 200px;
+    text-align: center;
+}
+.registr{
+    max-width: 88px;
+}
+a{
+    display: block;
+    width: 300px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.registr:nth-child(1){
+margin-left: 70%;
+}
+.registr_h2{
+    float: left;
+    margin-left: 15px;
+}
+.cart_shop{
+    display: none;
+    position: fixed;
+    width: 500px;
+    min-height: 100px;
+    background: #f0e1e1;
+    left: 400px;
+    top: 200px;
+    overflow: auto;
+    max-height: 600px;
+}
+.cart{
+    cursor: pointer;
+}
+.popup-fade {
+    display: none;
+}
+.popup-fade:before {
+    content: '';
+    background: #000;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: 0.7;
+    z-index: 9999;
+}
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    padding: 20px;
+    width: 500px;
+    margin-left: -200px;    
+    background: #fff;
+    border: 1px solid orange;
+    border-radius: 4px; 
+    z-index: 99999;
+    opacity: 1;    
+}
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.cart-overlay{
+
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(145, 142, 142, 0.8);    
+}
+.cart_mod{
+    display: table-cell;
+    padding: 0 1em;
+    vertical-align: middle;
+    text-align: center;
+}
+.modal{
+    display: inline-block;
+    padding: 20px;
+    max-width: 50em;
+    max-height: 20em;
+    background: #607d8b;
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    color: #cfd8dc;
+    text-align: left;
+    overflow: auto;
+    opacity: 1;
+}
+.td-count{
+    width: 100px;
+}
+.btn-count-add{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.count{
+    float: left;
+    margin: 2px 15px;
+}
+.btn-count-dec{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.modal-close{
+    cursor: pointer;
+    border: white solid 1px;
+    border-radius: 50; 
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    text-align: center;
+    position: relative;
+    left: 90%;
+}
+.modal-close p{
+    margin-top: 6px;
+
+}
+
+.registration-overlay{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.registr{
+    display: table-cell;
+    margin: 1em;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+input{
+    font-size: 20pt;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 30px 30px 30px 30px;
+}
+#btn-input{
+    display: block;
+    float: none;
+    width: 288px;
+    height: 50px;
+    margin: 15px auto;
+    transform: scale(1);
+    border-radius: 15px;
+    transition-property: transform, filter;
+    transition-duration: 1s;
+}
+#btn-input:hover{
+    cursor: pointer; 
+    transform: scale(1.2);
+    filter: drop-shadow(0.4em 0.4em 5px rgba(122,122,122,0.5));
+    transition-property: transform, filter;
+    transition-duration: 1s;
+}
+#conteiner{
+    display: table;
+    width: 100%;
+    height: 100vh;
+
+}
+#form-input{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+#password{
+    display: block;
+    margin: 15px auto;
+    padding: 0 10px;
+}
+#login{
+    display: block;
+    margin: 15px auto;
+    padding: 0 10px;
+}

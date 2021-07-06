@@ -1,0 +1,9 @@
+
+// Работа с датами
+$date_now = date('Y-m-d');
+$date = date_create($date_now);
+	date_modify($date, '-1 day');
+	echo date_format($date, 'd.m.Y');
+
+//Решение ошибки Cannot modify header information - headers already sent by
+output_buffering on

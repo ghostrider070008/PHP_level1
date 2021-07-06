@@ -1,0 +1,321 @@
+h1{
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 180px;
+    display: block;
+    float: left;
+}
+.p_2{
+    display: block;
+}
+
+.tovar{
+    float: left;
+    height: 390px;
+    margin-right: 15px;
+}
+.tovar:nth-child(3n){
+    margin-right: 0;
+}
+.clear{
+    clear: both;
+}
+.name_tov{
+    display: block;
+    float: none;
+    text-decoration: none;
+    color: DarkGoldenRod;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 84px;
+    width: 369px;
+}
+h2{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    min-height: 84px;
+    
+}
+section{
+    width: 84%;
+    margin: 0 auto;
+}
+.p_info{
+    text-align: justify;
+    margin: 0;
+    margin-left: 15px;
+    float: left;
+    width: 300px;
+}
+.p_price{
+    color: CadetBlue;
+    font-size: 16pt;
+    display: block;
+    float: left;
+    margin: 0;
+    width: 200px;
+    text-align: center;
+}
+.registrat{
+    height: 15px;
+    background-color: darkcyan; 
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 30px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    transition: .5s;
+    width: auto;
+}
+.registrat:hover{
+    background-position: right center; 
+}
+a{
+    display: block;
+    width: 300px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+}
+.registr:nth-child(1){
+margin-left: 70%;
+}
+.registr_h2{
+    float: left;
+    margin-left: 15px;
+    margin-top: 0;
+}
+.cart_shop{
+    display: none;
+    position: fixed;
+    width: 500px;
+    min-height: 100px;
+    background: #f0e1e1;
+    left: 400px;
+    top: 200px;
+    overflow: auto;
+    max-height: 600px;
+}
+.cart p{
+    margin: 0;
+}
+.cart{
+    cursor: pointer;
+    background-color: darkcyan; 
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    color: white;
+    padding: 20px 15px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    transition: .5s;
+    width: auto;
+}
+.cart:hover{
+    background-position: right center; 
+}
+.popup-fade {
+    display: none;
+}
+.popup-fade:before {
+    content: '';
+    background: #000;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    opacity: 0.7;
+    z-index: 9999;
+}
+.popup {
+    position: fixed;
+    top: 20%;
+    left: 30%;
+    padding: 20px;
+    width: 500px;
+    margin-left: -200px;    
+    background: #fff;
+    border: 1px solid orange;
+    border-radius: 4px; 
+    z-index: 99999;
+    opacity: 1;    
+}
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.cart-overlay{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: rgba(145, 142, 142, 0.8);    
+}
+.cart_mod{
+    display: table-cell;
+    padding: 0 1em;
+    vertical-align: middle;
+    text-align: center;
+}
+.modal{
+    display: inline-block;
+    padding: 20px;
+    max-width: 50em;
+    max-height: 20em;
+    background: #607d8b;
+    -webkit-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.22), 0px 19px 60px rgba(0, 0, 0, 0.3);
+    color: #cfd8dc;
+    text-align: left;
+    overflow: auto;
+    opacity: 1;
+}
+.td-count{
+    width: 100px;
+}
+.btn-count-add{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.count{
+    float: left;
+    margin: 2px 15px;
+}
+.btn-count-dec{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
+.modal-close{
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    position: relative;
+    left: 90%;
+    font-size: 12pt;
+}
+
+#p-modal-close{
+    margin-top: 6px;
+    transform: scale(1);
+    transition: all 1s;
+
+}
+#p-modal-close:hover{
+    margin-top: 6px;
+    transform: scale(1.4);
+    transition: all 1s;
+    color: brown;
+
+}
+
+.registration-overlay{
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.registr{
+    display: table-cell;
+    margin: 1em;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+input{ /*input*/
+    font-size: 14pt;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 30px 30px 30px 30px;
+    /*text-indent: 15px; Отступ текста слева*/
+    padding: 0px 10px;
+}
+input:hover{
+    box-shadow: #607d8b 5px 3px;
+}
+legend{
+    margin: 10px auto;
+    font-size: 20pt;
+}
+fieldset{
+    border: 0;
+}
+#adress{ /*Ввод адреса*/
+    font-size: 14pt;
+    width: 400px;
+    height: 150px;
+    border-radius: 30px;
+    padding: 5px 30px;
+}
+#adress:hover{
+    box-shadow: #607d8b 5px 3px;
+}
+
+#btn_home{
+    font-size: 14pt;
+    height: 30px;
+    margin-bottom: 15px;
+    border-radius: 30px 30px 30px 30px;
+    padding: 0px 10px;
+    
+}
+#btn_home:hover{
+    box-shadow: #607d8b 5px 3px;
+    background-color: #34C6CD;
+    cursor: pointer;
+}
+.custom-control{
+width: 300px;
+margin: 0 auto;
+margin-bottom: 1em;
+}
+.btn_submit:hover{
+    box-shadow: #607d8b 5px 3px;
+    background-color: #34C6CD;
+    cursor: pointer;
+}
+.home{
+    width: 77px;
+    background-color: rgb(196, 193, 193);
+    height: 31px;
+    font-size: 14pt;
+    text-align: center;
+    transition: all 0.5s;
+    border-radius: 15px;
+
+}
+.home:hover{
+    cursor: pointer;
+    background-color: rgb(202, 209, 175);
+    box-shadow: black 3px 3px; 
+    transition: all 0.5s;
+}
+#customCheck:hover{
+    cursor:pointer;
+}
